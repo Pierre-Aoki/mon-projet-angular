@@ -9,6 +9,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   isAuth = false;
 
+  lastUpdate = new Promise(
+    (resolve) => {
+      const date = new Date();
+      setTimeout(() => {
+        resolve(date);
+      }, 2000);
+    }
+  );
+
   apprareils = [
     {
       name: 'Machine à laver',
