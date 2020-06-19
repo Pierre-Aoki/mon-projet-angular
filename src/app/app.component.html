@@ -1,27 +1,16 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h2>Mes appareils</h2>
-        <p> {{ lastUpdate | async | date}} </p>
-        <ul class="list-group">
-          <app-appareil *ngFor="let appareil of apprareils" 
-            [appareilName]="appareil.name"
-            [appareilStatus]="appareil.status">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="list-group">
+          <app-appareil
+            *ngFor="let appareil of appareils; let appareil_index = index"
+              [appareilName]="appareil.name"
+              [appareilStatus]="appareil.status"
+              [appareilIndex]="appareil_index">
           </app-appareil>
-        </ul>
-        <button class="btn btn-success" 
-          [disabled]="!isAuth"
-          (click)="onAllumer()">Tout Allumer</button>
-      </div>
+      </ul>
+      <button class="btn btn-success" (click)="onAllumer()">Allumer</button>
+<button class="btn btn-danger" (click)="onEteindre()">Eteindre</button>
     </div>
   </div>
-</body>
-</html>
+</div>
