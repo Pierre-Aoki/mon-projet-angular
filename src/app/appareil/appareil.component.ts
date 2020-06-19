@@ -7,37 +7,11 @@ import { AppareilService } from '../services/appareil.services';
   styleUrls: ['./appareil.component.scss']
 })
 
-export class AppareilComponent implements OnInit {
+export class AppareilComponent {
+  constructor() {
 
-  //Propriété perso : 
-  @Input() appareilName: string;
-  @Input() appareilStatus: string;
-  @Input() appareilIndex: number;
-
-  constructor(private appareilService: AppareilService) { }
-
-  ngOnInit(): void {
   }
 
-  getStatus() {
-    return this.appareilStatus;
-  }
-
-  getColor() {
-    if (this.appareilStatus)
-    {
-      return 'green';
-    } else{
-      return 'red';
-    }
-  }
-
-  onSwitch() {
-    if (this.appareilStatus == 'allumé') {
-      this.appareilService.switchOffOne(this.appareilIndex); 
-    } else if (this.appareilStatus == 'éteint') {
-      this.appareilService.switchOnOne(this.appareilIndex);
-    }
-  }
+  
 
 }
