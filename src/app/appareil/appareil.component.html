@@ -8,9 +8,9 @@
           Appareil : {{ appareilName }} -- Statut : {{ getStatus() }} 
      </h4>
      <button class="btn btn-success" 
-          (click)="onSwitch()"
-          [disabled]="appareilStatus == 'allumé'">Allumer</button>
+          [disabled]="appareilStatus == 'allumé'"
+          (click)='onSwitchon()'>Allumer</button>
      <button class="btn btn-danger" 
-          (click)="onSwitch()"
-          [disabled]="appareilStatus == 'éteint'">Eteindre</button>
+          [disabled]="appareilStatus == 'éteint'"
+          (click)='onSwitchOff()'>Eteindre</button>
 </li>

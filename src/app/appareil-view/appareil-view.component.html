@@ -1,12 +1,13 @@
 <div class="col-xs-12">
     <ul class="list-group">
-        <app-appareil-view 
-            *ngFor="let appareil of appareils; 
-                        let appareil_index = index" 
-            [appareilName]="appareil.name"
-            [appareilStatus]="appareil.status" [appareilIndex]="appareil_index">
-        </app-appareil-view>
+        <app-appareil *ngFor="
+            let appareil of appareils; 
+              let appareil_index = index" 
+                [appareilName]="appareil.name" 
+                [appareilStatus]="appareil.status"
+                [appareilIndex]="appareil_index">
+        </app-appareil>
     </ul>
-    <button class="btn btn-success" (click)="onSwitch()">Allumer</button>
-    <button class="btn btn-danger" (click)="onSwitch()">Eteindre</button>
+    <button class="btn btn-success" (click)="onAllumer()">Allumer</button>
+    <button class="btn btn-danger" (click)="onEteindre()">Eteindre</button>
 </div>

@@ -8,10 +8,32 @@ import { AppareilService } from '../services/appareil.services';
 })
 
 export class AppareilComponent {
-  constructor() {
+  //Propriété perso : 
+  @Input() appareilName: string;
+  @Input() appareilStatus: string;
+  @Input() appareilIndex: number;
+
+  constructor(private appareilService: AppareilService) {
 
   }
 
-  
+  getStatus() {
+    return this.appareilStatus;
+  }
 
+  getColor() {
+    if (this.appareilStatus) {
+      return 'green';
+    } else {
+      return 'red';
+    }
+   }
+
+   onSwitchon() {
+    this.appareilService.switchOnOne(this.appareilIndex);
+   }
+
+  onSwitchOff() {
+    this.appareilService.switchOffOne(this.appareilIndex);
+  }
 }

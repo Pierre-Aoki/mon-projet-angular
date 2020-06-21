@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AppareilService } from './services/appareil.services';
 
 @Component({
@@ -7,23 +7,10 @@ import { AppareilService } from './services/appareil.services';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent implements OnInit {
-
-  appareils: any[];
-
-  constructor(private appareilService: AppareilService) {
+export class AppComponent {
+  constructor() {
     
   }
-
-  ngOnInit() {
-    this.appareils = this.appareilService.apprareils; 
-  }
-
-  onAllumer() {
-    this.appareilService.switchOnAll();
-  }
-
-  onEteindre() {
-    this.appareilService.switchOffAll();
-  }
+  
 }
+ 
