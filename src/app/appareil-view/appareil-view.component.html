@@ -3,6 +3,7 @@
         <app-appareil *ngFor="
             let appareil of appareils; 
               let appareil_index = index" 
+                [appareilId]="appareil.id"
                 [appareilName]="appareil.name" 
                 [appareilStatus]="appareil.status"
                 [appareilIndex]="appareil_index">

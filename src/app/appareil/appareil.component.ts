@@ -9,6 +9,7 @@ import { AppareilService } from '../services/appareil.services';
 
 export class AppareilComponent {
   //Propriété perso : 
+  @Input() appareilId: number; 
   @Input() appareilName: string;
   @Input() appareilStatus: string;
   @Input() appareilIndex: number;
